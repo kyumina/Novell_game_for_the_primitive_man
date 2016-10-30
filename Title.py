@@ -9,6 +9,7 @@ import sys
 #自作群
 import CONSTS
 import Scripts
+import Main
 
 class Title:
     def __init__(self):
@@ -57,7 +58,7 @@ class Title:
             pygame.display.update()
             for event in pygame.event.get():
                 if event.type == MOUSEBUTTONDOWN and event.button == 1:
-                    self.word_start.mouseDownNotice(mousepos,lambda x:None,None)
+                    self.word_start.mouseDownNotice(mousepos,lambda x:Main.Main(),None)
                     self.word_continue.mouseDownNotice(mousepos,lambda x:tkinter.filedialog.askopenfilename(**self.args),None)
                     self.word_finish.mouseDownNotice(mousepos,lambda x:sys.exit(),None)
                 if event.type==QUIT:
